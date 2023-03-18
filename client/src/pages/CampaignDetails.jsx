@@ -20,7 +20,7 @@ const CampaignDetails = () => {
 
   const fetchDonators = async () => {
     const data = await getDonations(state.pId);
-
+    console.log(data);
     setDonators(data);
   }
 

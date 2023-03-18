@@ -17,11 +17,15 @@ const CreateCampaign = () => {
     description: '',
     target: '', 
     deadline: '',
-    image: ''
+    image: '',
+    coupoun1: '',
+    coupoun2: '',
+    // coupoun3: 'XYZ',
   });
 
   const handleFormFieldChange = (fieldName, e) => {
     setForm({ ...form, [fieldName]: e.target.value })
+    console.log(form)
   }
 
   const handleSubmit = async (e) => {
@@ -93,7 +97,29 @@ const CreateCampaign = () => {
             value={form.deadline}
             handleChange={(e) => handleFormFieldChange('deadline', e)}
           />
+
         </div>
+        <FormField 
+            labelName="Coupoun 1"
+            placeholder="Coupoun 1"
+            inputType="text"
+            value={form.coupoun1}
+            handleChange={(e) => handleFormFieldChange('coupoun1', e)}
+          />
+          <FormField
+            labelName="Coupoun 2"
+            placeholder="Coupon 2"
+            inputType="text"
+            value={form.coupoun2}
+            handleChange={(e) => handleFormFieldChange('coupoun2', e)}
+          />
+          {/* <FormField
+            labelName="Coupon 3"
+            placeholder="Coupon 3"
+            inputType="text"
+            value={form.coupoun3}
+            handleChange={(e) => handleFormFieldChange('coupoun3', e)}
+          /> */}
 
         <FormField 
             labelName="Campaign image *"
